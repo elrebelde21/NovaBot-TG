@@ -8,9 +8,11 @@ const chalk = require('chalk')
 const { exec } = require('child_process');
 const readline = require('readline');
 const cfonts = require('cfonts');
+const axios = require('axios') 
 const { say } = cfonts
 
 let startTime = new Date();
+const logo = "https://telegra.ph/file/470647d2a89f6381d644f.jpg"
 
 // Reemplaza 'TOKEN_DEL_BOT' con el token que obtuviste de BotFather
 const token = '7181826474:AAH4ZhtnlgksLYJDxBCqgpod9gQh3Du4krM';
@@ -23,6 +25,7 @@ console.log(`🚀 Iniciando....`)
 conn.onText(/\/menu/, (msg) => {
 const chatId = msg.chat.id;
 const userName = msg.from.first_name; // Obtén el nombre visible del usuario
+conn.sendChatAction(chatId, 'typing'); //Muestra como "escribiendo..."
 
 conn.sendMessage(chatId, `Hola ${userName}`, {
 reply_markup: {
@@ -56,6 +59,7 @@ conn.sendMessage(chatId, `Pong 🏓: ${pingTime.toFixed(2)} ms`);
 
 conn.onText('uptime', (msg) => {
 const chatId = msg.chat.id;
+conn.sendChatAction(chatId, 'typing'); //Muestra como "escribiendo..."
     const currentTime = new Date();
     const uptimeInSeconds = Math.floor((currentTime - startTime) / 1000);
     conn.sendMessage(chatId,`🚩 Online: ${formatUptime(uptimeInSeconds)}`);
@@ -69,8 +73,10 @@ function formatUptime(uptimeInSeconds) {
 
 conn.onText(/ia|chagpt/, async (msg) => {
 const chatId = msg.chat.id;
-const text = msg.text; // Aquí obtienes el texto del mensaje
-if (!msg.text) conn.sendMessage(chatId, '⚠️ Por favor, ingresa un texto');
+const text = msg.text.split(' ')[1]; // Aquí obtienes el texto del mensaje
+if (!text) conn.sendMessage(chatId, '⚠️ Por favor, ingresa un texto');
+conn.sendChatAction(chatId, 'typing'); //Muestra como "escribiendo..."
+//conn.sendChatAction(chatId, 'record_audio'); //Muestra como "grabando audio"
 let gpt = await fetch(global.API('fgmods', '/api/info/openai2', { text }, 'apikey'));        
 let res = await gpt.json()
 await conn.sendMessage(chatId, res.result)
@@ -79,7 +85,8 @@ await conn.sendMessage(chatId, res.result)
 conn.onText(/image/, async (msg) => {
 const {googleImage} = require('@bochilteam/scraper') 
   const chatId = msg.chat.id;
-  const text = msg.text;
+  const text = msg.text.split(' ')[1];
+conn.sendChatAction(chatId, 'typing'); //Muestra como "escribiendo..."  
   if (!text) {
    conn.sendMessage(chatId, '⚠️ Que esta buscado?');
     return;
@@ -98,22 +105,41 @@ conn.onText(/tiktok/, async (msg) => {
   const chatId = msg.chat.id;
   const text = msg.text.split(' ')[1]; // Obtener el texto después de "tiktok"
   if (!text) {
-  conn.sendMessage(chatId, '⚠️ Ingresa el enlace de algún video de TikTok');
+ conn.sendMessage(chatId, '⚠️ Ingresa el enlace de algún video de TikTok');
     return;
   }
-  
   try {
     let res = await fetch(`https://api.alyachan.dev/api/tiktok?url=${text}&apikey=GataDios`);
     let data = await res.json();
-    conn.sendVideo(chatId, data); // Suponiendo que la respuesta de la API incluye un campo "video" con el enlace al video
+  conn.sendVideo(chatId, data.url);
   } catch (error) {
-conn.sendMessage(chatId, 'Hubo un error al obtener el video de TikTok.');
+ conn.sendMessage(chatId, 'Hubo un error al obtener el video de TikTok.');
   }
 });
 
-conn.onText(/\/start/, (msg) => {
-  const chatId = msg.chat.id;
-  conn.sendMessage(chatId, 'Hola no hay nada todavía aqui 🤓');
+conn.onText('start', async (msg) => {
+const chatId = msg.chat.id;
+const userName = msg.from.first_name;     
+conn.sendPhoto(chatId, imagen1, {caption: `╭┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈⪩
+┊┏━━━━━━━━━━━━━━•
+┊┃ ┏━━━━━━━━━━━━━━•
+┊┃ ┃❐ Hola ${userName}
+┊┃ ┃━━━━━━━━━━━━━━•
+┊┃ ┃❐ Lista de comando:
+┊┃ ┃• /ping
+┊┃ ┃• /uptime
+┊┃ ┃• /ia
+┊┃ ┃• /image
+┊┃ ┗━━━━━━━━━━━━━━•
+┊┗━━━━━━━━━━━━━━•
+╰┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈⪩ `,
+reply_markup: {
+inline_keyboard: [
+[{ text: 'Prueba', callback_data: 'start' }],
+[{ text: 'Velocidad', callback_data: 'ping' }],                    
+],
+},
+});  
 });
 
 //Maneja todos los mensajes

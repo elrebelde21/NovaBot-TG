@@ -64,6 +64,12 @@ global.APIKeys = {
 global.packname = "𝐍𝐨𝐯𝐚𝐁𝐨𝐭-𝐌𝐃"
 global.author = `${vs}`
  
+//---------[ IMAGEN ]---------
+global.imagen1 = fs.readFileSync('./media/menu.jpg')
+global.imagen2 = fs.readFileSync('./media/menu2.jpg')
+global.imagen3 = fs.readFileSync('./media/menu3.jpg')
+global.noperfil = fs.readFileSync('./media/sinfoto.jpg')
+ 
 //---------[ ENLACES ]---------
 global.md = 'https://github.com/elrebelde21/NovaBot-MD'
 global.yt = 'https://www.youtube.com/@elrebelde.21'
