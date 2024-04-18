@@ -12,7 +12,6 @@ const axios = require('axios')
 const { say } = cfonts
 
 let startTime = new Date();
-const logo = "https://telegra.ph/file/470647d2a89f6381d644f.jpg"
 
 // Reemplaza 'TOKEN_DEL_BOT' con el token que obtuviste de BotFather
 const token = '7181826474:AAH4ZhtnlgksLYJDxBCqgpod9gQh3Du4krM';
