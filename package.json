@@ -9,22 +9,25 @@
   },
   "author": "elrebelde21",
   "dependencies": {
-   "@bochilteam/scraper": "^4.2.4",
-    "fs": "latest",
-    "chalk": "^4.1.2",
-   "cfonts": "^2.10.0",   
-   "cheerio": "^1.0.0-rc.10",
-    "util": "^0.12.4",
-    "axios": "^0.24.0",
-   "api-dylux": "^1.6.2",
-    "node-telegram-bot-api": "^0.65.1", 
-    "mongoose": "^8.1.2",
-    "node-fetch": "^2.6.1",
-    "telegraf": "^4.15.3",
-    "readline": "latest",
-    "cfonts": "latest"
-  },
-  "devDependencies": {
-    "nodemon": "^3.0.3"
-  }
-}
+"@bochilteam/scraper": "^4.2.4",
+"node-telegram-bot-api": "^0.65.1",
+"telegraf": "@latest", 
+"yt-search": "^2.10.3",
+"api-dylux": "^1.7.6",
+"axios": "^0.24.0",
+"chalk": "^4.1.2",
+"cheerio": "^1.0.0-rc.10",
+"google-it": "^1.6.3", 
+"cfonts": "^2.10.0",
+"cfonts": "latest",
+"fs": "latest",
+"mongoose": "^8.1.2",
+"node-fetch": "^2.6.1",
+"readline": "latest",
+"telegraf": "^4.15.3",
+"util": "^0.12.4"
+},
+"devDependencies": {
+"nodemon": "^3.0.3"
+}}
+
