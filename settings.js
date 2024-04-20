@@ -10,8 +10,8 @@ global.premium = []
 global.blockList = []  
 
 //---------[ NOMBRE/INFO ]---------
-global.botname = "𝙂𝙖𝙩𝙖𝘽𝙤𝙩-𝙏𝙂 🐈"
-global.wm = '𝙂𝙖𝙩𝙖𝘽𝙤𝙩-𝙏𝙂'
+global.botname = "NovaBot"
+global.wm = '𝙽𝚘𝚟𝚊𝙱𝚘𝚝'
 global.vs = '1.0.0'
 
 //Iniciar session con tu tokens
@@ -65,8 +65,8 @@ global.APIKeys = {
 };
  
 //---------[ STICKERS ]---------
-global.packname = "𝙂𝙖𝙩𝙖𝘽𝙤𝙩-𝙏𝙂 🐈"
-global.author = `𝙂𝙖𝙩𝙖 𝘿𝙞𝙤𝙨`
+global.packname = "𝐍𝐨𝐯𝐚𝐁𝐨𝐭"
+global.author = `${vs}`
  
 global.imagen1 = fs.readFileSync('./media/img1.jpg')
 global.gataVidMenu = fs.readFileSync('./media/Menuvid1.mp4') 
