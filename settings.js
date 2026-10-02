@@ -14,8 +14,8 @@ global.botname = "NovaBot"
 global.wm = '𝙽𝚘𝚟𝚊𝙱𝚘𝚝'
 global.vs = '1.0.0'
 
-//Iniciar session con tu tokens
-global.token = "7181826474:AAH4ZhtnlgksLYJDxBCqgpod9gQh3Du4krM"
+//Iniciar session con tu tokens, obtenerlo desde @BotFather
+global.token = "TU_TOKEN_AQUI"
 
 //---------[ APIS GLOBAL ]---------
 global.keysZens = ['LuOlangNgentot', 'c2459db922', '37CC845916', '6fb0eff124', 'hdiiofficial', 'fiktod', 'BF39D349845E', '675e34de8a', '0b917b905e6f']; 
@@ -71,14 +71,14 @@ global.author = `${vs}`
 global.imagen1 = fs.readFileSync('./media/img1.jpg')
 global.gataVidMenu = fs.readFileSync('./media/Menuvid1.mp4') 
 
-global.md = 'https://github.com/GataNina-Li'
-global.yt = 'https://youtube.com/@gatadios'
-global.ig = 'https://www.instagram.com/gata_dios'
+global.md = 'https://github.com/elrebelde21'
+global.yt = 'https://youtube.com/@elrebelde.21'
+global.ig = 'https://instagram.com/itschinita_official'
 global.fb = 'https://www.facebook.com/groups/872989990425789/'
 
-global.nna = 'https://whatsapp.com/channel/0029Va6yY0iLY6d6XDmqA03g' //CANAL UPDATE
-global.nn2 = 'https://t.me/globalgb' //Canal GataBot
-global.nn3 = 'https://t.me/supergatabot' 
+global.nna = 'https://whatsapp.com/channel/0029VagJ2FF4CrfrS8BoLW2b' //CANAL UPDATE
+global.nn2 = 'https://t.me/+iOgJwX4NCSc2ZmI5'
+global.nn3 = 'https://t.me/+VtPHIosx_i04ODEx' 
 
 
 global.info = {
